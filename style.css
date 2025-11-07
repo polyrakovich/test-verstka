@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
+/*variables*/
+:root {
+    --font-size: 1.5rem;
+}
+
 /*Сброс стилей*/
 *,
 *::before,
@@ -25,9 +30,86 @@ body {
 
 button {
     line-height: 1.1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 img {
     max-width: 100%;
     display: block;
+}
+
+/*main*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Golos Text', sans-serif;
+    background-color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem;
+    width: 100%;
+}
+
+.poem {
+    margin-bottom: 6rem;
+}
+
+.poem__text {
+    font-size: calc(var(--font-size) * 5);
+    letter-spacing: calc(((var(--font-size) * 5) * -0.04));
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container {
+   padding: calc(var(--font-size));
+    max-height: calc(var(--font-size) * 3);
+    background: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 200%;
+    height: 100%;
+    background-color: white ;
+    border-top: calc((var(--font-size)) + (var(--font-size) / 2) - 1px) solid black;
+    border-bottom: calc((var(--font-size)) + (var(--font-size) / 2) - 1px) solid black;
+    cursor: default;
+}
+
+.container::before {
+    left: -200%;
+    border-right: calc(var(--font-size)) solid white;
+}
+
+.container::after {
+    left: 100%;
+    border-left: calc(var(--font-size)) solid white;
+}
+
+.button {
+    padding: 0;
+    font-size: var(--font-size);
+    line-height: 1;
+    outline: none;
+}
+
+img {
+    display: inline-block;
 }

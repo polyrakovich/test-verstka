@@ -2,7 +2,8 @@
 
 /*variables*/
 :root {
-    --font-size: 1.5rem;
+    --main-text-font-size: 7.5rem;
+    --button-font-size: 1.5rem;
 }
 
 /*Сброс стилей*/
@@ -65,16 +66,16 @@ main {
 }
 
 .poem__text {
-    font-size: calc(var(--font-size) * 5);
-    letter-spacing: calc(((var(--font-size) * 5) * -0.04));
+    font-size: var(--main-text-font-size);
+    letter-spacing: calc(var(--main-text-font-size) * -0.04 );
     color: white;
     text-transform: uppercase;
     text-align: center;
 }
 
 .container {
-   padding: calc(var(--font-size));
-    max-height: calc(var(--font-size) * 3);
+   padding: calc(var(--button-font-size));
+    max-height: calc(var(--button-font-size) * 3);
     background: white;
     position: relative;
     cursor: pointer;
@@ -88,24 +89,24 @@ main {
     width: 200%;
     height: 100%;
     background-color: white ;
-    border-top: calc((var(--font-size)) + (var(--font-size) / 2) - 1px) solid black;
-    border-bottom: calc((var(--font-size)) + (var(--font-size) / 2) - 1px) solid black;
+    border-top: calc((var(--button-font-size)) + (var(--button-font-size) / 2) - 1px) solid black;
+    border-bottom: calc((var(--button-font-size)) + (var(--button-font-size) / 2) - 1px) solid black;
     cursor: default;
 }
 
 .container::before {
     left: -200%;
-    border-right: calc(var(--font-size)) solid white;
+    border-right: calc(var(--button-font-size)) solid white;
 }
 
 .container::after {
     left: 100%;
-    border-left: calc(var(--font-size)) solid white;
+    border-left: calc(var(--button-font-size)) solid white;
 }
 
 .button {
     padding: 0;
-    font-size: var(--font-size);
+    font-size: var(--button-font-size);
     line-height: 1;
     outline: none;
 }
